@@ -1,0 +1,24 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* theme */
+:root{ --teal:#06B6D4; --coral:#FB923C; --gold:#FACC15; }
+body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+.card { background: rgba(255,255,255,0.94); backdrop-filter: blur(6px); border-radius: 12px; box-shadow: 0 10px 30px rgba(15,23,42,0.06); }
+
+.world-canvas { height: 360px; border-radius: 14px; overflow: hidden; position: relative; }
+.sky { position:absolute; inset:0; background: linear-gradient(180deg,#fff7ed,#ecfeff); }
+.island { position:absolute; left:50%; transform:translateX(-50%); bottom:18px; width:480px; height:160px; background: radial-gradient(circle at 50% 20%, #fef3c7, #fde68a); border-radius:60px; display:flex; align-items:center; justify-content:center; box-shadow: 0 18px 40px rgba(15,23,42,0.12); }
+.pebby { width:140px; height:140px; border-radius:999px; background: linear-gradient(180deg,#fff,#f8fafc); display:flex; align-items:center; justify-content:center; box-shadow: 0 8px 26px rgba(15,23,42,0.08); }
+.pebby-anim { animation: pebby 3s ease-in-out infinite; transform-origin:50% 50%; }
+@keyframes pebby { 0%{ transform: translateY(0);} 50%{ transform: translateY(-12px) rotate(-5deg);} 100%{ transform: translateY(0);} }
+
+.pulse-ring { position:absolute; inset:0; border-radius:999px; pointer-events:none; }
+.pulse-anim { animation: pulse 1.6s ease-out; }
+@keyframes pulse { 0%{ transform: scale(0.9); opacity:0.6 } 100%{ transform: scale(1.6); opacity:0 } }
+
+.tab { cursor:pointer; padding:8px 12px; border-radius:8px; }
+.tab-active { background: linear-gradient(90deg,var(--teal),var(--coral)); color:white; box-shadow: 0 6px 18px rgba(6,182,212,0.12); }
